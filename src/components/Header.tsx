@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <>
-      <div className="relative flex flex-row px-5 py-2 items-center mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:py-4 laptop:w-[1024px] leptop:px-10 laptop:py-5 desktop:w-[1280px] ">
+      <div className="relative flex flex-row px-5 py-2 items-center mobile:w-[480px] mobile:mx-auto tablet:w-[640px] tablet:px-8 tablet:py-4 laptop:w-[1024px] leptop:px-10 laptop:py-5 desktop:w-[1280px] desktop:px-14">
         <img src={Logo} alt="logo" className="w-40 mobile:w-48 laptop:w-56 desktop:w-64" />
         <ul className=' hidden laptop:flex laptop:flex-row laptop:gap-7 laptop:ml-auto desktop:gap-10'>
           <li ><NavLink to='/' className="text-textColor font-Ysabeau  font-medium text-xl tracking-wider desktop:text-2xl">ГОЛОВНА</NavLink></li>
