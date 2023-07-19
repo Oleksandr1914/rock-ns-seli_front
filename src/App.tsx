@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage"
 import ForGroup from "./pages/ForGroup"
 import Gallery from "./pages/Gallery"
 import Header from "./components/Header"
+import Contacts from "./pages/Contacts"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/group" element={<ForGroup />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contacts" element={<Contacts />} />
         {/* <Route path="/*" element={<Navigate to={"/"} />} /> */}
       </Routes>
     </>
