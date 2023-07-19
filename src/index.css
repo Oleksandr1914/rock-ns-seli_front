@@ -16,6 +16,12 @@
   border-radius: 12px;
   background-color: #ea580c;
 }
+
+.active:hover::after,
+:focus::after {
+  background-color: #fb923c;
+}
+
 :root {
   font-family: "Ysabeau SC", sans-serif;
   line-height: 1.5;

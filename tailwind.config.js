@@ -10,6 +10,7 @@ module.exports = {
       burgerColor: "#f1f5f9",
       backgroundBurger: "#18181b",
       activeLink: "#7f1d1d",
+      hoverColor: "#fb923c",
     },
     fontFamily: {
       Ysabeau: "Ysabeau SC",
