@@ -37,21 +37,24 @@ const EighteenYear = () => {
         setPhotos(newArray)
     }, [EighteenList])
 
-    return <div>
-        {loading ? <p>Loading...</p> : <div className="py-6 tablet:pt-8 laptop:pt-11"><PhotoAlbum photos={photos} layout="columns" columns={(containerWidth) => {
-            if (containerWidth < 484) return 2;
-            if (containerWidth < 800) return 3;
-            return 4;
-        }} onClick={({ index }) => setIndex(index)} />
-            <Lightbox
-                slides={photos}
-                open={index >= 0}
-                index={index}
-                close={() => setIndex(-1)}
-                plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
-                thumbnails={{ border: 0 }}
-            />
-        </div>}
+    return <div className="py-6 tablet:pt-8 laptop:pt-11">
+        {loading ?
+            <p>Loading...</p> :
+            < >
+                <PhotoAlbum photos={photos} layout="columns" columns={(containerWidth) => {
+                    if (containerWidth < 484) return 2;
+                    if (containerWidth < 800) return 3;
+                    return 4;
+                }} onClick={({ index }) => setIndex(index)} />
+                <Lightbox
+                    slides={photos}
+                    open={index >= 0}
+                    index={index}
+                    close={() => setIndex(-1)}
+                    plugins={[Fullscreen, Slideshow, Thumbnails, Zoom]}
+                    thumbnails={{ border: 0 }}
+                />
+            </>}
     </div>
 }
 
