@@ -1,5 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { fetchEighteenList } from "./galleryOperation";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {
+  fetchEighteenList,
+  fetchNineteenthList,
+  fetchTwentyFirstList,
+  isError,
+} from "./galleryOperation";
 
 type ItemImage = {
   asset_id: string;
@@ -19,8 +24,8 @@ type ItemImage = {
 
 type GalleryState = {
   EighteenList: ItemImage[];
-  NineteenthList: [];
-  TwentyFirstList: [];
+  NineteenthList: ItemImage[];
+  TwentyFirstList: ItemImage[];
   loading: boolean;
   error: string | null;
 };
@@ -45,6 +50,26 @@ const gallerySlice = createSlice({
       })
       .addCase(fetchEighteenList.fulfilled, (state, action) => {
         state.EighteenList = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchNineteenthList.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchNineteenthList.fulfilled, (state, action) => {
+        state.NineteenthList = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchTwentyFirstList.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchTwentyFirstList.fulfilled, (state, action) => {
+        state.TwentyFirstList = action.payload;
+        state.loading = false;
+      })
+      .addMatcher(isError, (state, action: PayloadAction<string>) => {
+        state.error = action.payload;
         state.loading = false;
       });
   },
