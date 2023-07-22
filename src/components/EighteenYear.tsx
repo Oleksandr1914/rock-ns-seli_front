@@ -32,7 +32,7 @@ const EighteenYear = () => {
     useEffect(() => {
 
         const newArray = EighteenList?.map(el => {
-            return { src: el.url, width: el.width, height: el.height };
+            return { src: el.secure_url, width: el.width, height: el.height };
         })
         setPhotos(newArray)
     }, [EighteenList])
